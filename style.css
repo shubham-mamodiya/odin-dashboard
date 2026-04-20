@@ -74,45 +74,84 @@
   flex: 7 1 auto;
 }
 
-#search__icon {
-
-  height: 1.3rem;
+.search__icon {
+  height: 1.2rem;
+  margin: 0px 20px 0px 80px;
 }
 
-#search__bar {
+.search__bar {
+  flex: 1 1 auto;
   background-color: #e1e7f0;
-
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  max-width: 450px;
 }
 
-#notification {
-  height: 1.3rem;
-  margin: 10px 10px;
+.notification {
+
+  height: 1.2rem;
+  margin: 0px 10px 0px 70px;
 }
 
-#profile__icon {
+.profile__icon {
   height: 40px;
   width: 40px;
+  margin: 5px;
+  border-radius: 50%;
 
 }
 
-#profile__name {
+.search__icon-2 {
+  display: none;
+  height: 1.2rem;
+}
+
+.profile__name {
   font-weight: 500;
   font-size: 1rem;
 }
 
-#avatar {
+.avatar {
   height: 20px;
 
 }
 
 .header {
-  background-color: #f8f9f9;
+  background-color: #fff;
 }
 
-.header__top {}
+.header__top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-/* 4. Small Mobile Devices */
-@media (max-width: 480px) {
+.search {
+  display: flex;
+  align-items: center;
+  flex: 3 1 auto;
+  max-width: 550px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+
+}
+
+.profile__name {
+  margin: 0px 10px 0px 0px;
+}
+
+.header__bottom {
+  display: flex;
+  align-items: center;
+}
+
+
+/* 2. Tablets (Landscape and Portrait) */
+
+@media (max-width: 1024px) {
   .sidebar__title {
     display: none;
   }
@@ -136,5 +175,58 @@
     gap: 0px;
     margin: 7px;
   }
+
+}
+
+/* 3. Small Tablets / Large Mobiles */
+
+@media (max-width: 768px) {
+  .header__top {
+    justify-content: flex-end;
+  }
+
+
+  .search__icon {
+    margin: 0px 20px 0px 40px;
+  }
+
+  .notification {
+    margin: 0px 10px 0px 40px;
+  }
+}
+
+/* 4. Small Mobile Devices */
+@media (max-width: 480px) {
+  .search__bar {
+    display: none;
+  }
+
+  .search__icon {
+    display: none;
+  }
+
+  .search {
+    flex: 0;
+    display: none;
+  }
+
+  .search__icon-2 {
+    display: inline;
+    height: 1.2rem;
+
+    margin: 0px 10px;
+  }
+
+
+
+  .profile {
+    justify-content: flex-end;
+  }
+
+  .notification {
+    margin: 0px 10px;
+  }
+
+
 
 }
