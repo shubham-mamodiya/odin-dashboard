@@ -1,3 +1,8 @@
+html,
+body {
+  height: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +12,7 @@
 
 .dashboard {
   display: flex;
+  min-height: 100vh;
 }
 
 .sidebar {
@@ -16,7 +22,6 @@
   color: #fbfaf9;
   width: 250px;
   padding: 15px;
-
 }
 
 
@@ -71,12 +76,16 @@
 }
 
 .right__section {
-  flex: 7 1 auto;
+  width: 100%;
 }
 
 .search__icon {
   height: 1.2rem;
   margin: 0px 20px 0px 80px;
+}
+
+.search__icon:hover {
+  cursor: pointer;
 }
 
 .search__bar {
@@ -85,6 +94,10 @@
   height: 1.5rem;
   border-radius: 1.5rem;
   max-width: 450px;
+}
+
+.search__bar:hover {
+  cursor: pointer;
 }
 
 .notification {
@@ -106,14 +119,17 @@
   height: 1.2rem;
 }
 
+.search__icon:hover {
+  cursor: pointer;
+}
+
+.notification:hover {
+  cursor: pointer;
+}
+
 .profile__name {
   font-weight: 500;
   font-size: 1rem;
-}
-
-.avatar {
-  height: 20px;
-
 }
 
 .header {
@@ -124,6 +140,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 0px 10px;
 }
 
 .search {
@@ -146,7 +164,46 @@
 .header__bottom {
   display: flex;
   align-items: center;
+  padding: 0px 10px;
 }
+
+
+.avatar {
+  height: 60px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.avatar__info {
+  margin-right: auto;
+  font-weight: 700;
+}
+
+.avatar__info span {
+  display: block;
+}
+
+.avatar__info span:nth-child(1) {
+  font-size: 0.7rem;
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+.btn__primary {
+  background-color: #1f91d3;
+  font-weight: 700;
+  border: none;
+  margin: 10px 10px 10px 0px;
+  padding: 0px 20px;
+  border-radius: 2rem;
+  color: white;
+  height: 2rem;
+}
+
+.btn__primary:hover {
+  cursor: pointer;
+}
+
 
 
 /* 2. Tablets (Landscape and Portrait) */
@@ -185,6 +242,19 @@
     justify-content: flex-end;
   }
 
+  .header__bottom {
+    padding: 0px;
+  }
+
+  .avatar__info {
+    display: none;
+  }
+
+  .avatar {
+    margin-right: auto;
+  }
+
+
 
   .search__icon {
     margin: 0px 20px 0px 40px;
@@ -203,6 +273,10 @@
 
   .search__icon {
     display: none;
+  }
+
+  .btn__primary {
+    margin-right: 5px;
   }
 
   .search {
