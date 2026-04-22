@@ -16,12 +16,17 @@ body {
 }
 
 .sidebar {
+  flex-shrink: 0;
   display: flex;
   background-color: #2290cf;
   flex-direction: column;
   color: #fbfaf9;
   width: 250px;
   padding: 15px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 
@@ -133,6 +138,8 @@ body {
 }
 
 .header {
+  position: sticky;
+  top: 0;
   background-color: #fff;
 }
 
@@ -204,6 +211,88 @@ body {
   cursor: pointer;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
+.content {
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "projects projects notify";
+  display: grid;
+  overflow: auto;
+
+}
+
+.projects {
+  display: grid;
+  grid-area: projects;
+  background-color: #e2e8f0;
+  align-content: center;
+  gap: 1rem;
+  padding: 20px 20px 0px 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: auto repeat(auto-fit, 300px);
+  justify-items: center;
+  align-items: stretch;
+  justify-content: start;
+  align-content: start;
+  grid-auto-flow: row;
+  overflow-y: auto;
+}
+
+.lable__project {
+  grid-column: 1/ -1;
+  justify-self: start;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.project__card {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px 20px 10px 20px;
+
+  box-shadow: -6px 0px 0px 0px #e8b12a;
+
+  margin: 0px 0px 10px 10px;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.project__card-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.project__card-desc {
+  flex: 1 0 100px;
+  margin: 5px 0px auto 5px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  overflow-y: auto;
+}
+
+.card__btns {
+  display: flex;
+
+  gap: 10px;
+  align-items: center;
+  justify-content: end;
+  margin: 10px 0px 0px 0px;
+}
+
+.card__btn {
+  height: 20px;
+}
+
+.notify {
+  grid-area: notify;
+  background-color: pink;
+}
 
 
 /* 2. Tablets (Landscape and Portrait) */
@@ -262,6 +351,14 @@ body {
 
   .notification {
     margin: 0px 10px 0px 40px;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "projects"
+      "notify"
+    ;
   }
 }
 
