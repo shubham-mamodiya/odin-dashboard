@@ -8,6 +8,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: roboto;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
 }
 
 .dashboard {
